@@ -1,9 +1,9 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
-from animals import get_all_animals, get_single_animal, create_animal
-from employees import get_all_employees, get_single_employee, create_employee
-from customers import get_all_customers, get_single_customer, create_customer
-from locations import get_all_locations, get_single_location, create_location
+from animals import get_all_animals, get_single_animal, create_animal, delete_animal
+from customers import get_all_customers, get_single_customer, create_customer, delete_customer
+from employees import get_all_employees, get_single_employee, create_employee, delete_employee
+from locations import get_all_locations, get_single_location, create_location, delete_location
 
 # Here's a class. It inherits from another class.
 class HandleRequests(BaseHTTPRequestHandler):
@@ -62,7 +62,7 @@ class HandleRequests(BaseHTTPRequestHandler):
             else:
                 response = f"{get_all_customers()}"
         
-        else:
+        elif resource == "locations":
             if id is not None:
                 response = f"{get_single_location(id)}"
 
@@ -94,12 +94,32 @@ class HandleRequests(BaseHTTPRequestHandler):
             new_object = create_employee(post_body)
         elif resource == "customers":
             new_object = create_customer(post_body)
-        else:
+        elif resource == "locations":
             new_object = create_location(post_body)
 
         # Encode the new animal and send in response
         if new_object is not None:
             self.wfile.write(f"{new_object}".encode())
+
+    def do_DELETE(self):
+    # Set a 204 response code
+        self._set_headers(204)
+
+    # Parse the URL
+        (resource, id) = self.parse_url(self.path)
+
+    # Delete a single animal from the list
+        if resource == "animals":
+            delete_animal(id)
+        elif resource == "customers":
+            delete_customer(id)
+        elif resource == "employees":
+            delete_employee(id)
+        elif resource == "locations":
+            delete_location(id)
+
+    # Encode the new animal and send in response
+        self.wfile.write("".encode())
 
     # Here's a method on the class that overrides the parent's method.
     # It handles any PUT request.
