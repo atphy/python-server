@@ -1,24 +1,15 @@
 LOCATIONS = [
     {
         "id": 1,
-        "name": "location1",
-        "species": "location1",
-        "locationId": 1,
-        "customerId": 4
+        "city": "Nashville",
     },
     {
         "id": 2,
-        "name": "location2",
-        "species": "location2",
-        "locationId": 1,
-        "customerId": 2
+        "city": "Charlotte",
     },
     {
         "id": 3,
-        "name": "location3",
-        "species": "location3",
-        "locationId": 2,
-        "customerId": 1
+        "city": "Chattanooga",
     }
 ]
 
