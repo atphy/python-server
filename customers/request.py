@@ -1,24 +1,18 @@
 CUSTOMERS = [
     {
         "id": 1,
-        "name": "customer1",
-        "species": "customer1",
-        "locationId": 1,
-        "customerId": 4
+        "name": "Sara McSarison",
+        "address": "1234 Street Rd"
     },
     {
         "id": 2,
-        "name": "customer2",
-        "species": "customer2",
-        "locationId": 1,
-        "customerId": 2
+        "name": "Dara McDarison",
+        "address": "1234 Street Rd"
     },
     {
         "id": 3,
-        "name": "customer3",
-        "species": "customer3",
-        "locationId": 2,
-        "customerId": 1
+        "name": "Tina McTinason",
+        "address": "1234 Street Rd"
     }
 ]
 
