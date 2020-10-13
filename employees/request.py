@@ -1,17 +1,7 @@
-EMPLOYEES = [
-    {
-        "id": 1,
-        "name": "Gary McGarison",
-    },
-    {
-        "id": 2,
-        "name": "Larry McLarrison",
-    },
-    {
-        "id": 3,
-        "name": "Tim McTimison",
-    }
-]
+import sqlite3
+import json
+
+from models import Employee
 
 def get_single_employee(id):
     requested_employee = None

@@ -1,17 +1,7 @@
-LOCATIONS = [
-    {
-        "id": 1,
-        "city": "Nashville",
-    },
-    {
-        "id": 2,
-        "city": "Charlotte",
-    },
-    {
-        "id": 3,
-        "city": "Chattanooga",
-    }
-]
+import sqlite3
+import json
+
+from models import Location
 
 def get_single_location(id):
     requested_location = None
